@@ -1,0 +1,76 @@
+body {
+    background-color: #202124;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Courier New", Courier, monospace;
+    color: #ffffff;
+}
+
+.terminal {
+    background-color: #000000;
+    border-radius: 10px;
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.terminal-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.terminal-buttons {
+    display: flex;
+}
+
+.terminal-button {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.terminal-button-red {
+    background-color: #fc605b;
+}
+
+.terminal-button-yellow {
+    background-color: #fdbc40;
+}
+
+.terminal-button-green {
+    background-color: #34c749;
+}
+
+.terminal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-line {
+    margin-bottom: 10px;
+}
+
+@keyframes terminal-loader {
+    0% {
+        content: ".";
+    }
+    25% {
+        content: "..";
+    }
+    50% {
+        content: "...";
+    }
+    75% {
+        content: ".";
+    }
+}
+
+.terminal-loading::after {
+    content: ".";
+    animation: terminal-loader 1s infinite;
+}

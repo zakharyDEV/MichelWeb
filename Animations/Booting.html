@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enhanced Booting Animation</title>
+    
+  </head>
+  <style>
+    
+    body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        z-index: 9999;
+      }
+
+      #loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .boot-animation {
+        position: relative;
+        width: 350px;
+        height: 350px;
+        background-color: transparent;
+        animation: bootAnimation 3s linear forwards;
+      }
+
+      .boot-line {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 180px;
+        height: 2px;
+        background-color: #fff;
+        transform-origin: left;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+
+      .boot-line:nth-child(1) {
+        transform: translate(-50%, -50%) rotateZ(0deg) translateX(180px);
+      }
+
+      .boot-line:nth-child(2) {
+        transform: translate(-50%, -50%) rotateZ(45deg) translateX(180px);
+      }
+
+      .boot-line:nth-child(3) {
+        transform: translate(-50%, -50%) rotateZ(90deg) translateX(180px);
+      }
+
+      .boot-line:nth-child(4) {
+        transform: translate(-50%, -50%) rotateZ(135deg) translateX(180px);
+      }
+
+      .boot-line:nth-child(5) {
+        transform: translate(-50%, -50%) rotateZ(180deg) translateX(180px);
+      }
+
+      .boot-line:nth-child(6) {
+        transform: translate(-50%, -50%) rotateZ(225deg) translateX(180px);
+      }
+
+      .boot-line:nth-child(7) {
+        transform: translate(-50%, -50%) rotateZ(270deg) translateX(180px);
+      }
+
+      .boot-line:nth-child(8) {
+        transform: translate(-50%, -50%) rotateZ(315deg) translateX(180px);
+      }
+
+      .boot-line:after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: -18px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+      @keyframes bootAnimation {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes lineAnimation {
+        0% {
+          transform: translate(-50%, -50%) rotateZ(0deg) translateX(180px);
+        }
+        20% {
+          transform: translate(-50%, -50%) rotateZ(360deg) translateX(180px);
+        }
+        40% {
+          transform: translate(-50%, -50%) rotateZ(720deg) translateX(180px);
+        }
+        60% {
+          transform: translate(-50%, -50%) rotateZ(1080deg) translateX(180px);
+        }
+        80% {
+          transform: translate(-50%, -50%) rotateZ(1440deg) translateX(180px);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotateZ(1800deg) translateX(180px);
+        }
+      }
+    
+  </style>
+  <body>
+    <div id="loading-screen">
+      <div class="boot-animation">
+        <div class="boot-line"></div>
+        <div class="boot-line"></div>
+        <div class="boot-line"></div>
+        <div class="boot-line"></div>
+        <div class="boot-line"></div>
+        <div class="boot-line"></div>
+        <div class="boot-line"></div>
+        <div class="boot-line"></div>
+      </div>
+    </div>
+    
+  </body>
+  <script>
+    
+    window.addEventListener("load", function () {
+        var loadingScreen = document.getElementById("loading-screen");
+        setTimeout(function () {
+          loadingScreen.classList.add("hidden");
+          window.location.href = "../login.php";
+        }, 3000);
+      });
+    
+  </script>
+</html>
