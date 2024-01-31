@@ -2,7 +2,7 @@ version: 1.0
 runtime: php81
 build:  commands:
     build:
-      - echo "Installing PHP extensions"
+      - echo "Installing PHP extensions" jsutrsahjassghyuad
       - docker-php-ext-install pdo_mysql
 run:
   command: supervisord

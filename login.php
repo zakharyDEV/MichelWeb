@@ -1,3 +1,6 @@
+
+
+<!DOCTYPE html>
 <?php /*
 if(basename($_SERVER['PHP_SELF']) != 'Successfull.php' && $_SERVER['HTTP_REFERER'] != 'Animations/Booting.html') {
     header("Location: Animations/Booting.html");
@@ -23,8 +26,6 @@ if(basename($_SERVER['PHP_SELF']) != 'Successfull.php' && $_SERVER['HTTP_REFERER
     
     include 'includes/HTML-head.php';
 ?>  
-
-<!DOCTYPE html>
 <html>
 <head>
   <title>Login Form</title>
